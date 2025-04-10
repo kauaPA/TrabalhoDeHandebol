@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Kanit:wght@300&display=swap');
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+   }
+   
+   body {
+       font-family: 'Arial', sans-serif;
+       background-color: #F2F2F2; 
+       color: #333; 
+   }
+   nav {
+            background-color: #003366; 
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #28a745; 
+        }
+
+   header {
+       background-color: #007BFF; 
+       color: white;
+       text-align: center;
+       padding: 20px;
+       border-bottom: 5px solid #0056b3;
+   }
+
+   header h1 {
+       font-size: 3rem;
+       margin-bottom: 10px;
+   }
+
+   header p {
+       font-size: 1.2rem;
+   }
+
+   button {
+       background-color: #28a745; 
+       color: white;
+       border: none;
+       padding: 15px 30px;
+       font-size: 1.2rem;
+       border-radius: 5px;
+       cursor: pointer;
+       transition: background-color 0.3s ease;
+   }
+
+   button:hover {
+       background-color: #218838; 
+   }
+
+   main {
+       padding: 1px;
+       text-align: center;
+   }
+
+   h2 {
+       font-size: 2rem;
+       margin-bottom: 20px;
+   }
+
+   p {
+       font-size: 1.2rem;
+       margin-bottom: 20px;
+   }
+
+   footer {
+       background-color: #007BFF;
+       color: white;
+       padding: 20px;
+       text-align: center;
+   }
+
+   footer p {
+       font-size: 1rem;
+   }
+
+   header {
+       background-size: cover;
+       background-position: center;
+       color: white;
+   }
+
+   .footer-text {
+       font-size: 1.1rem;
+       color: #f0f0f0;
+   }
+
+.imgc{
+    margin: 30px;
+    width: 450px;
+    
+}
+h4{
+    margin: auto;
+}
+button{
+    margin: 20px;
+}
+.container-fluid{
+
+    background-color: #218838;
+}

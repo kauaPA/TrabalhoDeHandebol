@@ -1,0 +1,588 @@
+ <!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
+ </script>
+ <LINK rel=STYLESHEET type="text/css" href="../css/pagprincipal.css">
+<title>Página Principal</title>
+</head>
+<body>
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <a href="./pagprincipal.html">
+                        <img src="../img/logo2.png" class="rounded" alt="logo do site" width="95" height="95">
+                </a>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active cor" href="../html/pagprincipal.html">Evolução Histórica</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active cor" href="../html/quadra.html">Handebol de Quadra</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active cor" href="../html/brasil.html">Handebol no Brasil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active cor" href="../html/jogo.html">Caça Palavras</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<main class="container-fluid bg-info"> 
+   <div class="d-flex flex-row  justify-content-around mt-5 mx-5 flex-wrap w-100">
+      <div>
+          <h4 class="text-light lançamento w-50">Bem-vindo ao jogo de caça-palavras com temática de Handebol, se você prestou atenção no conteúdo das páginas, não terá dificuldades em encontrar as palavras. <br> <br> Boa sorte! </h4>
+      </div>
+ <button onclick="iniciarJogo()">Iniciar Jogo</button>
+    <script>
+function iniciarJogo() {
+   var d, sv, aux, v, vld, aux2, aux3, aux4, jgd;
+jgd = 1
+do{
+aux = 0;
+aux2 = 0;
+aux3 = 0;
+vld = 0;
+sv = "";
+v = [];
+gradeFácilaux = (" p1 " + " p2 " + " p3 " + " p4 " + " p5 " + "\n" + " p7 " + " p8 " + " p9 " + " p10 " + " p11 " + "\n" + " p13 " + " p14 " + " p15 " + " p16 " + " p17 " + "\n" + " p19 " + " p20 " + " p21 " + " p22 " + " p23 " + "\n" + " p25 " + " p26 " + " p27 " + " p28 " + " p29 ");
+gradeMédiaaux = (" p1 " + " p2 " + " p3 " + " p4 " + " p5 " + " p6 " + "\n" + " p8 " + " p9 " + " p10 " + " p11 " + " p12 " + " p13 " + "\n" + " p15 " + " p16 " + " p17 " + " p18 " + " p19 " + " p20 " + "\n" + " p22 " + " p23 " + " p24 " + " p25 " + " p26 " + " p27 " + "\n" + " p29 " + " p30 " + " p31 " + " p32 " + " p33 " + " p34 " + "\n" + " p36 " + " p37 " + " p38 " + " p39 " + " p40 " + " p41 ");
+gradeDifícilaux = (" p1 " + " p2 " + " p3 " + " p4 " + " p5 " + " p6 " + " p7 " + "\n" + " p9 " + " p10 " + " p11 " + " p12 " + " p13 " + " p14 " + " p15 " + "\n" + " p17 " + " p18 " + " p19 " + " p20 " + " p21 " + " p22 " + " p23 " + "\n" + " p25 " + " p26 " + " p27 " + " p28 " + " p29 " + " p30 " + " p31 " + "\n" + " p33 " + " p34 " + " p35 " + " p36 " + " p37 " + " p38 " + " p39 " + "\n" + " p41 " + " p42 " + " p43 " + " p44 " + " p45 " + " p46 " + " p47 " + "\n" + " p49 " + " p50 " + " p51 " + " p52 " + " p53 " + " p54 " + " p55 ");
+gradeFácil1 = [" i "," a "," g "," u "," a ", "\n" , " n "," g "," l "," m "," s ", "\n" , " t "," o "," o "," p "," a " , "\n" , " e "," r "," b "," a "," l ", "\n" , " r "," a "," o "," z "," a "]
+gradeFácil2 = [" v "," e "," l "," o "," z ", "\n" , " c "," a "," m "," p "," o ", "\n" , " f "," i "," h "," a "," u ", "\n" , " v "," x "," z "," í "," r ", "\n" , " b "," a "," l "," s "," o "]
+gradeFácil3 = [" f "," a "," s "," e "," m ", "\n" , " f "," l "," o "," r "," a ", "\n" , " a "," o "," n "," d "," e ", "\n" , " t "," e "," r "," m "," o ", "\n" , " o "," r "," l "," a "," r "]
+gradeMédia1 = [" r "," o "," r "," a "," i "," i " , "\n" , " a "," u "," a "," o "," a "," r " , "\n" , " ç "," t "," s "," p "," a "," r " , "\n" , " a "," r "," u "," s "," s "," o " , "\n" , " u "," o "," s "," m "," i "," f " , "\n" , " r "," a "," z "," c "," a "," a "]
+gradeMédia2 = [" b "," a "," r "," c "," o "," o " , "\n" , " r "," y "," m "," z "," c "," a " , "\n" , " a "," o "," a "," o "," s "," a " , "\n" , " ç "," n "," t "," s "," r "," a " , "\n" , " o "," x "," a "," a "," p "," a " , "\n" , " s "," m "," v "," o "," v "," o "]
+gradeMédia3 = [" q "," a "," c "," n "," m "," v " , "\n" , " f "," u "," z "," a "," b "," d " , "\n" , " p "," b "," a "," l "," ó "," n " , "\n" , " h "," a "," n "," d "," e "," p " , "\n" , " v "," i "," l "," s "," r "," c " , "\n" , " s "," u "," e "," c "," i "," a "]
+gradeDifícil1 = [" l "," a "," p "," o "," r "," u "," e " , "\n" , " a "," a "," b "," o "," b "," e "," u " , "\n" , " b "," x "," i "," h "," a "," c "," q " , "\n" , " v "," c "," b "," d "," h "," b "," i " , "\n" , " y "," c "," a "," r "," n "," v "," n " , "\n" , " c "," s "," e "," r "," c "," u "," u " , "\n" , " s "," a "," n "," t "," o "," s "," m "]
+gradeDifícil2 = [" c "," o "," l "," a "," c "," o "," r " , "\n" , " u "," t "," j "," r "," x "," h "," e " , "\n" , " n "," a "," o "," u "," z "," l "," t " , "\n" , " h "," a "," i "," t "," i "," u "," a " , "\n" , " a "," a "," m "," l "," a "," g "," r " , "\n" , " s "," a "," r "," u "," e "," r "," a " , "\n" , " o "," s "," i "," c "," n "," o "," c "]
+gradeDifícil3 = [" a "," m "," i "," g "," o "," x "," s " , "\n" , " d "," p "," a "," i "," o "," i "," o " , "\n" , " n "," l "," a "," t "," n "," l "," p " , "\n" , " o "," v "," i "," t "," e "," f "," a " , "\n" , " w "," r "," e "," z "," i "," c "," l " , "\n" , " x "," s "," o "," t "," i "," c "," a " , "\n" , " e "," r "," u "," d "," i "," t "," o "]
+alert("Bem vindo ao caça-palavras, nesse jogo teremoos 3 dificuldades (fácil, médio e difícil). O nível fácil apresenta grades de palavras 5x5, sendo duas grades com 9 palavras e uma com 8 palavras para serem encontradas; o nível médio apresenta grades de palavras 6x6, sendo duas grades com 12 palavras e uma com 11 palavras para serem encontradas; e o nível difícil apresenta grades de palavras 7x7, sendo duas grades com 15 palavras e uma com 14 palavras para serem encontradas. Na hora de tentar achar as palavras, terá uma grade auxiliar embaixo da grade para ajudar o jogador a ver em que posição está a letra que ele deseja escolher, e mais embaixo terá a lista de palavras que devem ser encontradas nas grades. Boa sorte!");
+alert("É importante lembrar que, a grade auxiliar é formada por um (p) antes de cada número, exemplo: (p1 p2 p3 p4 p5). Mas na hora de digitar as posições que deseja, você deve digitar apenas o número (sem o p).");
+alert("E você pode desistir a qualquer momento da grade, digitando 500. Bom jogo!");
+d = prompt("Escolha a dificuldade que deseja jogar: 1- para fácil, 2- para médio e 3- para difícil");
+sorteiograde = 2;
+if (d==1){
+alert ("Voce escolheu o nivel fácil, nesse nível as palavras podem ser achadas na horizontal ou vertical. E você poderá ver as palavras que já acertou");
+if (sorteiograde==1){
+do{
+do{
+   vld = 0;
+   ep = Number(prompt("Digite aqui a posição da letra que deseja (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeFácil1 + "\n" + "\n" + gradeFácilaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: inter- agua- sal- asa- globo- agora- um- paz- ala" + "\n" + "\n" + "Palavras que você já encontrou: " + v));
+   while (ep < 1 || ep > 5 && ep < 7 || ep > 11 && ep < 13 || ep > 17 && ep < 19 || ep > 23 && ep < 25 || ep > 29 && ep < 100 || ep > 100 && ep != 500){
+   ep = Number(prompt("Essa posição não existe, por favor digite outra (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeFácil1 + "\n" + "\n" + gradeFácilaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: inter- agua- sal- asa- globo- agora- um- paz- ala" + "\n" + "\n" + "Palavras que você já encontrou: " + v));
+} 
+   if (ep == 500){
+   aux += 20000000;
+   alert ("Você é fraco!");
+}    
+   if(ep != 100 && ep != 500){
+   ep = ep - 1;
+   sv += gradeFácil1[ep];
+}
+}while (ep != 100 && ep != 500);
+sv = sv.replaceAll(" ", "");
+while (aux3 < v.length){
+if (v[aux3]== sv ){
+alert ("Você já acertou essa palavra, tente acertar outra");
+vld = 1;
+}
+else{
+}
+aux3++
+}
+if (vld != 1){
+if (sv == "inter" || sv == "agua" || sv == "sal" || sv == "asa" || sv == "globo" || sv == "agora" || sv == "um" || sv == "paz" || sv == "ala"){
+alert ("Você acertou uma das palavras!");
+v[aux2] = sv
+aux++
+aux2++
+sv = "";
+aux3 = 0;
+if (aux == 9){
+alert ("Parabéns, você achou todas as palavras!");
+}
+}
+else{
+     if (ep != 500){
+     alert ("Essa palavra não é uma das que devem ser encontradas. Tente novamente");
+     sv = "";
+     aux3 = 0;
+}
+}
+}
+else{
+     sv = "";
+     aux3 = 0;
+     
+}
+}while(aux < 9);
+}
+if (sorteiograde==2){
+do{
+do{
+    vld = 0;
+    ep = Number(prompt("Digite aqui a posição da letra que deseja (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeFácil2 + "\n" + "\n" + gradeFácilaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: campo- veloz- ouro- FIHA- país" + "\n" + "\n" + "Palavras que você já encontrou: " + v));
+    while (ep < 1 || ep > 5 && ep < 7 || ep > 11 && ep < 13 || ep > 17 && ep < 19 || ep > 23 && ep < 25 || ep > 29 && ep < 100 || ep > 100 && ep != 500){
+    ep = Number(prompt("Essa posição não existe, por favor digite outra (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeFácil2 + "\n" + "\n" + gradeFácilaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: campo- veloz- ouro- FIHA- país" + "\n" + "\n" + "Palavras que você já encontrou: " + v));
+ 
+}
+   if (ep == 500){
+   aux += 20000000;
+   alert ("Obrigado por jogar");
+}        
+   if(ep != 100 && ep != 500){
+   ep = ep - 1;
+   sv += gradeFácil2[ep];
+}
+}while (ep != 100 && ep != 500);
+sv = sv.replaceAll(" ", "");
+while (aux3 < v.length){
+if (v[aux3]== sv ){
+alert ("Você já acertou essa palavra, tente acertar outra");
+vld = 1;
+}
+else{
+}
+aux3++
+}
+if (vld != 1){
+if (sv == "veloz" || sv == "campo" || sv == "fiha" || sv == "ouro" || sv == "país"){
+alert ("Você acertou uma das palavras!");
+v[aux2] = sv
+aux++
+aux2++
+sv = "";
+aux3 = 0;
+if (aux == 5){
+alert ("Parabéns, você achou todas as palavras!");
+}
+}
+else{
+     if (ep != 500){
+     alert ("Essa palavra não é uma das que devem ser encontradas. Tente novamente");
+     sv = "";
+     aux3 = 0;
+}
+}
+}
+else{
+     sv = "";
+     aux3 = 0;
+     
+}
+}while(aux < 5);
+}
+if (sorteiograde==3){
+do{
+do{
+   vld = 0;
+   ep = Number(prompt("Digite aqui a posição da letra que deseja (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeFácil3 + "\n" + "\n" + gradeFácilaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: fato- flor- termo- orla- fase- mae- flora- lar- aonde" + "\n" + "\n" + "Palavras que você já encontrou: " + v));
+   while (ep < 1 || ep > 5 && ep < 7 || ep > 11 && ep < 13 || ep > 17 && ep < 19 || ep > 23 && ep < 25 || ep > 29 && ep < 100 || ep > 100 && ep != 500){
+   ep = Number(prompt("Essa posição não existe, por favor digite outra (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeFácil3 + "\n" + "\n" + gradeFácilaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: fato- flor- termo- orla- fase- mae- flora- lar- aonde" + "\n" + "\n" + "Palavras que você já encontrou: " + v));
+} 
+   if (ep == 500){
+   aux += 20000000;
+   alert ("Você é fraco!");
+}       
+   if(ep != 100 && ep != 500){
+   ep = ep - 1;
+   sv += gradeFácil3[ep];
+}
+}while (ep != 100 && ep != 500);
+sv = sv.replaceAll(" ", "");
+while (aux3 < v.length){
+if (v[aux3]== sv ){
+alert ("Você já acertou essa palavra, tente acertar outra");
+vld = 1;
+}
+else{
+}
+aux3++
+}
+if (vld != 1){
+if (sv == "fato" || sv == "flor" || sv == "termo" || sv == "orla" || sv == "fase" || sv == "mae" || sv == "flora" || sv == "lar" || sv == "aonde"){
+alert ("Você acertou uma das palavras!");
+v[aux2] = sv
+aux++
+aux2++
+sv = "";
+aux3 = 0;
+if (aux == 9){
+alert ("Parabéns, você achou todas as palavras!");
+}
+}
+else{
+     if (ep != 500){
+     alert ("Essa palavra não é uma das que devem ser encontradas. Tente novamente");
+     sv = "";
+     aux3 = 0;
+}
+}
+}
+else{
+     sv = "";
+     aux3 = 0;
+     
+}
+}while(aux < 9);
+}
+}
+if (d==2){
+alert ("Voce escolheu o nivel médio, nesse nível as palavras podem ser achadas na horizontal,vertical e diagonal. E você poderá ver as palavras que já acertou");
+if (sorteiograde==1){
+do{
+do{
+   vld = 0;
+   ep = Number(prompt("Digite aqui a posição da letra que deseja (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeMédia1 + "\n" + "\n" + gradeMédiaaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: russia- outro- roupa- pai- urso- raça- atum- ata- uma- assar- russo- par" + "\n" + "\n" + "Palavras que você já encontrou: " + v));
+   while (ep < 1 || ep > 6 && ep < 8 || ep > 13 && ep < 15 || ep > 20 && ep < 22 || ep > 27 && ep < 29 || ep > 34 && ep < 36 || ep > 41 && ep < 100 || ep > 100 && ep != 500){
+   ep = Number(prompt("Essa posição não existe, por favor digite outra (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeMédia1 + "\n" + "\n" + gradeMédiaaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: russia- outro- roupa- pai- urso- raça- atum- ata- uma- assar- russo- par" + "\n" + "\n" + "Palavras que você já encontrou: " + v));
+}
+   if (ep == 500){
+   aux += 20000000;
+   alert ("Você é fraco!");
+}        
+   if(ep != 100 && ep != 500){
+   ep = ep - 1;
+   sv += gradeMédia1[ep];
+}
+}while (ep != 100 && ep != 500);
+sv = sv.replaceAll(" ", "");
+while (aux3 < v.length){
+if (v[aux3]== sv ){
+alert ("Você já acertou essa palavra, tente acertar outra");
+vld = 1;
+}
+else{
+}
+aux3++
+}
+if (vld != 1){
+if (sv == "russia" || sv == "outro" || sv == "roupa" || sv == "pai" || sv == "urso" || sv == "raça" || sv == "atum" || sv == "ata" || sv == "uma" || sv == "assar" || sv == "russo" || sv == "par"){
+alert ("Você acertou uma das palavras!");
+v[aux2] = sv
+aux++
+aux2++
+sv = "";
+aux3 = 0;
+if (aux == 12){
+alert ("Parabéns, você achou todas as palavras!");
+}
+}
+else{
+     if (ep != 500){
+     alert ("Essa palavra não é uma das que devem ser encontradas. Tente novamente");
+     sv = "";
+     aux3 = 0;
+}
+}
+}
+else{
+     sv = "";
+     aux3 = 0;
+     
+}
+}while(aux < 12);
+}
+if (sorteiograde==3){
+do{
+do{
+   vld = 0;
+   ep = Number(prompt("Digite aqui a posição da letra que deseja (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeMédia2 + "\n" + "\n" + gradeMédiaaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: braço- rota- aço- massa- mata- amora- vara- ovo- opa- barco- toco- vovo" + "\n" + "\n" + "Palavras que você já encontrou: " + v));
+   while (ep < 1 || ep > 6 && ep < 8 || ep > 13 && ep < 15 || ep > 20 && ep < 22 || ep > 27 && ep < 29 || ep > 34 && ep < 36 || ep > 41 && ep < 100 || ep > 100 && ep != 500){
+   ep = Number(prompt("Essa posição não existe, por favor digite outra (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeMédia2 + "\n" + "\n" + gradeMédiaaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: braço- rota- aço- massa- mata- amora- vara- ovo- opa- barco- toco- vovo" + "\n" + "\n" + "Palavras que você já encontrou: " + v));
+}
+   if (ep == 500){
+   aux += 20000000;
+   alert ("Você é fraco!");
+}        
+   if(ep != 100 && ep != 500){
+   ep = ep - 1;
+   sv += gradeMédia2[ep];
+}
+}while (ep != 100 && ep != 500);
+sv = sv.replaceAll(" ", "");
+while (aux3 < v.length){
+if (v[aux3]== sv ){
+alert ("Você já acertou essa palavra, tente acertar outra");
+vld = 1;
+}
+else{
+}
+aux3++
+}
+if (vld != 1){
+if (sv == "braço" || sv == "rota" || sv == "aço" || sv == "massa" || sv == "mata" || sv == "amora" || sv == "vara" || sv == "ovo" || sv == "opa" || sv == "barco" || sv == "toco" || sv == "vovo"){
+alert ("Você acertou uma das palavras!");
+v[aux2] = sv
+aux++
+aux2++
+sv = "";
+aux3 = 0;
+if (aux == 12){
+alert ("Parabéns, você achou todas as palavras!");
+}
+}
+else{
+     if (ep != 500){
+     alert ("Essa palavra não é uma das que devem ser encontradas. Tente novamente");
+     sv = "";
+     aux3 = 0;
+}
+}
+}
+else{
+     sv = "";
+     aux3 = 0;
+     
+}
+}while(aux < 12);
+}
+if (sorteiograde==2){
+do{
+do{
+    vld = 0;
+    ep = Number(prompt("Digite aqui a posição da letra que deseja (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeMédia3 + "\n" + "\n" + gradeMédiaaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: quadra- hande- balón- suecia- fph" + "\n" + "\n" + "Palavras que você já encontrou: " + v));
+    while (ep < 1 || ep > 6 && ep < 8 || ep > 13 && ep < 15 || ep > 20 && ep < 22 || ep > 27 && ep < 29 || ep > 34 && ep < 36 || ep > 41 && ep < 100 || ep > 100 && ep != 500){
+    ep = Number(prompt("Essa posição não existe, por favor digite outra (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeMédia3 + "\n" + "\n" + gradeMédiaaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: quadra- hande- balón- suecia- fph" + "\n" + "\n" + "Palavras que você já encontrou: " + v));
+ 
+}
+   if (ep == 500){
+   aux += 20000000;
+   alert ("Obrigado por jogar!");
+}        
+   if(ep != 100 && ep != 500){
+   ep = ep - 1;
+   sv += gradeMédia3[ep];
+}
+}while (ep != 100 && ep != 500);
+sv = sv.replaceAll(" ", "");
+while (aux3 < v.length){
+if (v[aux3]== sv ){
+alert ("Você já acertou essa palavra, tente acertar outra");
+vld = 1;
+}
+else{
+}
+aux3++
+}
+if (vld != 1){
+if (sv == "quadra" || sv == "balón" || sv == "hande" || sv == "fph" || sv == "suecia"){
+alert ("Você acertou uma das palavras!");
+v[aux2] = sv
+aux++
+aux2++
+sv = "";
+aux3 = 0;
+if (aux == 5){
+alert ("Parabéns, você achou todas as palavras!");
+}
+}
+else{
+     if (ep != 500){
+     alert ("Essa palavra não é uma das que devem ser encontradas. Tente novamente");
+     sv = "";
+     aux3 = 0;
+}
+}
+}
+else{
+     sv = "";
+     aux3 = 0;
+     
+}
+}while(aux < 5);
+}
+}
+if (d==3){
+alert ("Voce escolheu o nivel difícil, nesse nível as palavras podem ser achadas na horizontal,vertical,diagonal e em direções inversas. E você não poderá ver as palavras que já acertou.");
+if (sorteiograde==2){
+do{
+do{
+    vld = 0;
+    ep = Number(prompt("Digite aqui a posição da letra que deseja (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeDifícil1 + "\n" + "\n" + gradeDifícilaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: mundial- Munique- CBD- santos- CBHb- europa-"));
+    while (ep < 1 || ep > 7 && ep < 9 || ep > 15 && ep < 17 || ep > 23 && ep < 25 || ep > 31 && ep < 33 || ep > 39 && ep < 41 || ep > 47 && ep < 49 || ep > 55 && ep < 100 || ep > 100 && ep != 500){
+    ep = Number(prompt("Essa posição não existe, por favor digite outra (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeDifícil1 + "\n" + "\n" + gradeDifícilaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: mundial- Munique- CBD- santos- CBHb- europa"));
+ 
+} 
+   if (ep == 500){
+   aux += 20000000;
+   alert ("Muito obrigado por jogar!");
+}       
+   if(ep != 100 && ep != 500){
+   ep = ep - 1;
+   sv += gradeDifícil1[ep];
+}
+}while (ep != 100 && ep != 500);
+sv = sv.replaceAll(" ", "");
+while (aux3 < v.length){
+if (v[aux3]== sv ){
+alert ("Você já acertou essa palavra, tente acertar outra");
+vld = 1;
+}
+else{
+}
+aux3++
+}
+if (vld != 1){
+if (sv == "mundial" || sv == "munique" || sv == "cbd" || sv == "santos" || sv == "cbhb" || sv == "europa"){
+alert ("Você acertou uma das palavras!");
+v[aux2] = sv
+aux++
+aux2++
+sv = "";
+aux3 = 0;
+if (aux == 6){
+alert ("Parabéns, você achou todas as palavras!");
+}
+}
+else{
+     if (ep != 500){
+     alert ("Essa palavra não é uma das que devem ser encontradas. Tente novamente");
+     sv = "";
+     aux3 = 0;
+}
+}
+}
+else{
+     sv = "";
+     aux3 = 0;
+     
+}
+}while(aux < 6);
+}
+if (sorteiograde==1){
+do{
+do{
+   vld = 0;
+   ep = Number(prompt("Digite aqui a posição da letra que deseja (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeDifícil2 + "\n" + "\n" + gradeDifícilaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: cultura- conciso- haja- unhas- carater- numa- haiti- orgulho- saiu- cor- cega- nao- saru- cola"));
+   while (ep < 1 || ep > 7 && ep < 9 || ep > 15 && ep < 17 || ep > 23 && ep < 25 || ep > 31 && ep < 33 || ep > 39 && ep < 41 || ep > 47 && ep < 49 || ep > 55 && ep < 100 || ep > 100 && ep != 500){
+   ep = Number(prompt("Essa posição não existe, por favor digite outra (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeDifícil2 + "\n" + "\n" + gradeDifícilaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: cultura- conciso- haja- unhas- carater- numa- haiti- orgulho- saiu- cor- cega- nao- saru- cola"));
+} 
+   if (ep == 500){
+   aux += 20000000;
+   alert ("Você é fraco, porém estava difícil mesmo");
+}       
+   if(ep != 100 && ep != 500){
+   ep = ep - 1;
+   sv += gradeDifícil2[ep];
+}
+}while (ep != 100 && ep != 500);
+sv = sv.replaceAll(" ", "");
+while (aux3 < v.length){
+if (v[aux3]== sv ){
+alert ("Você já acertou essa palavra, tente acertar outra");
+vld = 1;
+}
+else{
+}
+aux3++
+}
+if (vld != 1){
+if (sv == "cultura" || sv == "conciso" || sv == "haja" || sv == "unhas" || sv == "carater" || sv == "numa" || sv == "haiti" || sv == "orgulho" || sv == "saiu" || sv == "cor" || sv == "cega" || sv == "nao" || sv == "saru" || sv == "cola"){
+alert ("Você acertou uma das palavras!");
+v[aux2] = sv
+aux++
+aux2++
+sv = "";
+aux3 = 0;
+if (aux == 14){
+alert ("Parabéns, você achou todas as palavras!");
+}
+}
+else{
+     if (ep != 500){
+     alert ("Essa palavra não é uma das que devem ser encontradas. Tente novamente");
+     sv = "";
+     aux3 = 0;
+}
+}
+}
+else{
+     sv = "";
+     aux3 = 0;
+     
+}
+}while(aux < 14);
+}
+if (sorteiograde==3){
+do{
+do{
+   vld = 0;
+   ep = Number(prompt("Digite aqui a posição da letra que deseja (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeDifícil3 + "\n" + "\n" + gradeDifícilaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: sintese- erudito- dito- apatico- dica- afetivo- sopa- opala- otica- amigo- galo- mate- onda- vaio- gola"));
+   while (ep < 1 || ep > 7 && ep < 9 || ep > 15 && ep < 17 || ep > 23 && ep < 25 || ep > 31 && ep < 33 || ep > 39 && ep < 41 || ep > 47 && ep < 49 || ep > 55 && ep < 100 || ep > 100 && ep != 500){
+   ep = Number(prompt("Essa posição não existe, por favor digite outra (se achar que a palavra está completa, digite 100)" + "\n" + "\n" + gradeDifícil3 + "\n" + "\n" + gradeDifícilaux + "\n" + "\n" + "Lista de palavras que devem ser encontradas na grade: sintese- erudito- dito- apatico- dica- afetivo- sopa- opala- otica- amigo- galo- mate- onda- vaio- gola"));
+} 
+   if (ep == 500){
+   aux += 20000000;
+   alert ("Você é fraco, porém estava difícil mesmo");
+}       
+   if(ep != 100 && ep != 500){
+   ep = ep - 1;
+   sv += gradeDifícil3[ep];
+}
+}while (ep != 100 && ep != 500);
+sv = sv.replaceAll(" ", "");
+while (aux3 < v.length){
+if (v[aux3]== sv ){
+alert ("Você já acertou essa palavra, tente acertar outra");
+vld = 1;
+}
+else{
+}
+aux3++
+}
+if (vld != 1){
+if (sv == "sintese" || sv == "erudito" || sv == "dito" || sv == "apatico" || sv == "dica" || sv == "afetivo" || sv == "sopa" || sv == "opala" || sv == "otica" || sv == "amigo" || sv == "galo" || sv == "mate" || sv == "onda" || sv == "vaio" || sv == "gola"){
+alert ("Você acertou uma das palavras!");
+v[aux2] = sv
+aux++
+aux2++
+sv = "";
+aux3 = 0;
+if (aux == 15){
+alert ("Parabéns, você achou todas as palavras!");
+}
+}
+else{
+     if (ep != 500){
+     alert ("Essa palavra não é uma das que devem ser encontradas. Tente novamente");
+     sv = "";
+     aux3 = 0;
+}
+}
+}
+else{
+     sv = "";
+     aux3 = 0;
+     
+}
+}while(aux < 15);
+}
+}
+jgd = Number(prompt("Você deseja jogar novamente? 1- para sim e 2- para não"));
+}while (jgd == 1);
+}   
+</script>
+
+</main>
+<footer class="container-fluid bg-primary">
+    <p class="text-light text-center">
+        <b>Desenvolvido por: Kauã Almeida.</b> <br> 
+        <b>Turma escolhida: 9º ano</b> <br>
+        <b>Email para contato: kaua.almeida@aluno.riogrande.ifrs.edu.br</b>
+        </p>
+       
+    </p>
+</footer>
+</body>
+</html>
