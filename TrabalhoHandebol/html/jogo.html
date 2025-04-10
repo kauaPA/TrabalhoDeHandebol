@@ -66,13 +66,13 @@ gradeMédia3 = [" q "," a "," c "," n "," m "," v " , "\n" , " f "," u "," z ","
 gradeDifícil1 = [" l "," a "," p "," o "," r "," u "," e " , "\n" , " a "," a "," b "," o "," b "," e "," u " , "\n" , " b "," x "," i "," h "," a "," c "," q " , "\n" , " v "," c "," b "," d "," h "," b "," i " , "\n" , " y "," c "," a "," r "," n "," v "," n " , "\n" , " c "," s "," e "," r "," c "," u "," u " , "\n" , " s "," a "," n "," t "," o "," s "," m "]
 gradeDifícil2 = [" c "," o "," l "," a "," c "," o "," r " , "\n" , " u "," t "," j "," r "," x "," h "," e " , "\n" , " n "," a "," o "," u "," z "," l "," t " , "\n" , " h "," a "," i "," t "," i "," u "," a " , "\n" , " a "," a "," m "," l "," a "," g "," r " , "\n" , " s "," a "," r "," u "," e "," r "," a " , "\n" , " o "," s "," i "," c "," n "," o "," c "]
 gradeDifícil3 = [" a "," m "," i "," g "," o "," x "," s " , "\n" , " d "," p "," a "," i "," o "," i "," o " , "\n" , " n "," l "," a "," t "," n "," l "," p " , "\n" , " o "," v "," i "," t "," e "," f "," a " , "\n" , " w "," r "," e "," z "," i "," c "," l " , "\n" , " x "," s "," o "," t "," i "," c "," a " , "\n" , " e "," r "," u "," d "," i "," t "," o "]
-alert("Bem vindo ao caça-palavras, nesse jogo teremoos 3 dificuldades (fácil, médio e difícil). O nível fácil apresenta grades de palavras 5x5, sendo duas grades com 9 palavras e uma com 8 palavras para serem encontradas; o nível médio apresenta grades de palavras 6x6, sendo duas grades com 12 palavras e uma com 11 palavras para serem encontradas; e o nível difícil apresenta grades de palavras 7x7, sendo duas grades com 15 palavras e uma com 14 palavras para serem encontradas. Na hora de tentar achar as palavras, terá uma grade auxiliar embaixo da grade para ajudar o jogador a ver em que posição está a letra que ele deseja escolher, e mais embaixo terá a lista de palavras que devem ser encontradas nas grades. Boa sorte!");
+alert("Bem vindo ao caça-palavras, nesse jogo teremos 3 dificuldades (fácil, médio e difícil). O nível fácil apresenta uma grade de palavras 5x5, o nível médio apresenta uma grade de palavras 6x6 e o nível difícil apresenta uma grade de palavras 7x7. Na hora de tentar achar as palavras, terá uma grade auxiliar informando as posições embaixo da grade de palavras para ajudar o jogador a ver em que posição está a letra que ele deseja escolher, e mais embaixo terá a lista de palavras que devem ser encontradas nas grades. Boa sorte!");
 alert("É importante lembrar que, a grade auxiliar é formada por um (p) antes de cada número, exemplo: (p1 p2 p3 p4 p5). Mas na hora de digitar as posições que deseja, você deve digitar apenas o número (sem o p).");
 alert("E você pode desistir a qualquer momento da grade, digitando 500. Bom jogo!");
 d = prompt("Escolha a dificuldade que deseja jogar: 1- para fácil, 2- para médio e 3- para difícil");
 sorteiograde = 2;
 if (d==1){
-alert ("Voce escolheu o nivel fácil, nesse nível as palavras podem ser achadas na horizontal ou vertical. E você poderá ver as palavras que já acertou");
+alert ("Voce escolheu o nivel fácil, nesse nível as palavras podem ser achadas na horizontal ou vertical. E você poderá ver as palavras que já acertou. Lembre de usar SOMENTE o número das posições e que você pode desistir a qualquer momento digitando 500");
 if (sorteiograde==1){
 do{
 do{
@@ -238,7 +238,7 @@ else{
 }
 }
 if (d==2){
-alert ("Voce escolheu o nivel médio, nesse nível as palavras podem ser achadas na horizontal,vertical e diagonal. E você poderá ver as palavras que já acertou");
+alert ("Voce escolheu o nivel médio, nesse nível as palavras podem ser achadas na horizontal,vertical e diagonal. E você poderá ver as palavras que já acertou. Lembre de usar SOMENTE o número das posições e que você pode desistir a qualquer momento digitando 500");
 if (sorteiograde==1){
 do{
 do{
@@ -404,7 +404,7 @@ else{
 }
 }
 if (d==3){
-alert ("Voce escolheu o nivel difícil, nesse nível as palavras podem ser achadas na horizontal,vertical,diagonal e em direções inversas. E você não poderá ver as palavras que já acertou.");
+alert ("Voce escolheu o nivel difícil, nesse nível as palavras podem ser achadas na horizontal,vertical,diagonal e em direções inversas. E você não poderá ver as palavras que já acertou. Lembre de usar SOMENTE o número das posições e que você pode desistir a qualquer momento digitando 500");
 if (sorteiograde==2){
 do{
 do{
